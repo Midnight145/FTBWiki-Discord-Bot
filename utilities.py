@@ -59,7 +59,7 @@ class Utilities(commands.Cog):
         embed.set_image(url=self.bot.user.avatar_url)
         embed.add_field(name="User ID", value=self.bot.user.id, inline=False)
         embed.add_field(name="Join Date",
-                        value=self.bot.guild.get_member(self.bot.user.id).joined_at.strftime("%Y-%m-%d %H:%M.%S"),
+                        value=context.guild.get_member(self.bot.user.id).joined_at.strftime("%Y-%m-%d %H:%M.%S"),
                         inline=False)
         embed.add_field(name="Other Info", value="Created with discord.py", inline=False)
         await context.send(embed=embed)
