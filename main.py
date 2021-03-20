@@ -6,7 +6,6 @@ import discord
 with open('token.txt', 'r') as token:
     TOKEN = token.read().rstrip()
 
-GUILD_ID = 457095816771928076
 BOT_PREFIX = '>'
 COG_FILE = "COGS.txt"
 
@@ -24,10 +23,6 @@ bot.loaded_cogs, bot.unloaded_cogs = [], []
 
 @bot.event
 async def on_ready():
-    bot.guild = None
-
-    while bot.guild is None:
-        bot.guild = bot.get_guild(GUILD_ID)
 
     for i in bot.all_cogs:
         if i not in bot.loaded_cogs:
